@@ -21,6 +21,8 @@ def greedy_search(needed, stations):
     covered = set()    # estados ya cubiertos hasta ahora
     selected = []    # lista de estaciones seleccionadas
 
+    stations = stations.copy()  # para no modificar el original
+
     while covered != needed:  # mientras no cubramos todos los estados
         best_station = None  # mejor estación en esta vuelta
         new_states = set()   # estados nuevos que cubriría la mejor estación
